@@ -22,7 +22,14 @@ function evaluateCmd(userInput){
     case "tail":
       commandLibrary.tail(userInputArray.slice(1));
       break;
+    default:
+      errorHandler(command);
+      break;
   }
+}
+
+function errorHandler(command){
+  done(command + ' is not a valid command');
 }
 
 const commandLibrary = {
